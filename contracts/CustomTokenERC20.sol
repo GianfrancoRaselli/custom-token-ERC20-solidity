@@ -18,4 +18,8 @@ contract CustomTokenERC20 is TokenERC20 {
     mint(_account, 1000);
   }
 
+  function burnTokens(uint _amount) public {
+    burn(msg.sender, _amount);
+  }
+
 }
