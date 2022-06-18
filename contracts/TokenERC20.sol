@@ -142,7 +142,7 @@ contract TokenERC20 is IERC20 {
     if (currentAllowance != type(uint).max) {
       require(currentAllowance >= _amount, "ERC20: insufficient allowance");
       unchecked {
-        approve_(_owner, _spender, _amount);
+        approve_(_owner, _spender, currentAllowance - _amount);
       }
     }
   }
